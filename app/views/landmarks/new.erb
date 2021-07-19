@@ -2,5 +2,19 @@
 
 <!-- add content here -->
 
+<form method='POST' action='/landmarks'>
+<h3>Landmarks</h3>
+<% Landmark.all.each do |landmark| %>
+<input type="checkbox" name="landmark[id]" id="<%= landmark.id %>" value="<%= landmark.id %>"> <%=landmark.name%> <br>
+<%end%> <br><br>
+ 
+
+<h3>Create New Landmark</h3>
+Name: <input type='text' id='landmark_name' name='landmark[name]'>
+Year: <input type='text' id='landmark_year_completed' name='landmark[year_completed]'>
+<button type='submit' value='submit'>Create New Landmark</button> <br> <br>
+
+
 <a class="button" href="/landmarks">Landmarks</a>
 <a class="button" href="/">Home</a>
+</form>
